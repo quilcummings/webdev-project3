@@ -4,16 +4,16 @@ export default class Card extends React.Component {
     render() {
 
         return (
-            
+
             <div className='card'>
-                <div>
-                    <img src={this.props.path}/>
+                <div className='card-front'>
+                    <img src={this.props.path} alt={this.props.path} />
                 </div>
-                    <div className='card-front'>
+                <div className='card-back'>
                     <p>Back of Card</p>
                 </div>
             </div>
-        
+
         );
     }
-  }
+}
