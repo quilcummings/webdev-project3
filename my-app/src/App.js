@@ -18,22 +18,22 @@ function App() {
             <div class ="flex-item" id="fourth-child">
               <Card/>
             </div>
-            <div class ="flex-item" id="fourth-child">
+            <div class ="flex-item" id="fifth-child">
               <Card/>
             </div>
-            <div class ="flex-item" id="fourth-child">
+            <div class ="flex-item" id="sixth-child">
               <Card/>
             </div>
-            <div class ="flex-item" id="fourth-child">
+            <div class ="flex-item" id="seventh-child">
               <Card/>
             </div>
-            <div class ="flex-item" id="fourth-child">
+            <div class ="flex-item" id="eighth-child">
               <Card/>
             </div>
-            <div class ="flex-item" id="fourth-child">
+            <div class ="flex-item" id="ninth-child">
               <Card/>
             </div>
-            <div class ="flex-item" id="fourth-child">
+            <div class ="flex-item" id="tenth-child">
               <Card/>
             </div>
         </div>   

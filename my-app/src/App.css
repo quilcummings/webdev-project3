@@ -36,8 +36,13 @@
   
 }
 .flex-item {
-  flex-basis: 20px;
-  max-width: 50%;
+  flex-basis: 250px;
+  align-items: center
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @keyframes App-logo-spin {
