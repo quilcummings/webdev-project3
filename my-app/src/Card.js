@@ -2,17 +2,23 @@ import React from 'react';
 
 export default class Card extends React.Component {
     render() {
-      return (
+        var paths = [];
+        for(var i = 0; i < 10; i++)
+        {
+
+        }
+
+        return (
+            
+            <div className='card'>
+                <div>
+                <img src='characters/Cheek-resized.png' />
+                </div>
+                <div className='card-front'>
+                <p>Back of Card</p>
+                </div>
+            </div>
         
-          <div className='card'>
-            <div>
-              <img src='https://opengameart.org/sites/default/files/card%20back%20black.png' />
-            </div>
-            <div className='card-front'>
-              <h2>Front of Card</h2>
-            </div>
-          </div>
-    
-      );
+        );
     }
   }

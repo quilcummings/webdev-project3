@@ -28,22 +28,31 @@
   color: #61dafb;
 }
 
+
+
+body {
+  background-color: antiquewhite;
+}
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  padding-top: 40px;
+  gap: 30px;
   
 }
 .flex-item {
   flex-basis: 250px;
-  align-items: center
+  align-items: center;
+  background-color: #DFBC93;
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
+
+
 
 @keyframes App-logo-spin {
   from {
