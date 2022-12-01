@@ -7,34 +7,34 @@ function App() {
     <div className="App">  
     <div class="flex-container">
             <div class ="flex-item" id="first-child">
-              <Card/>
+              <Card path='characters/Cheek-resized.png'/>
             </div>
             <div class ="flex-item" id="second-child">
-              <Card/>
+              <Card path='characters/Stormy-resized.png'/>
             </div>
             <div class ="flex-item" id="third-child">
-              <Card/>
+              <Card path='characters/Cheek-resized.png'/>
             </div>
             <div class ="flex-item" id="fourth-child">
-              <Card/>
+              <Card path='characters/Pusheen-resized.png'/>
             </div>
             <div class ="flex-item" id="fifth-child">
-              <Card/>
+              <Card path='characters/Sloth-resized.png'/>
             </div>
             <div class ="flex-item" id="sixth-child">
-              <Card/>
+              <Card path='characters/Pip-resized.png'/>
             </div>
             <div class ="flex-item" id="seventh-child">
-              <Card/>
+              <Card path='characters/Sloth-resized.png'/>
             </div>
             <div class ="flex-item" id="eighth-child">
-              <Card/>
+              <Card path='characters/Pusheen-resized.png'/>
             </div>
             <div class ="flex-item" id="ninth-child">
-              <Card/>
+              <Card path='characters/Stormy-resized.png'/>
             </div>
             <div class ="flex-item" id="tenth-child">
-              <Card/>
+              <Card path='characters/Pip-resized.png'/>
             </div>
         </div>   
       

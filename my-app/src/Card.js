@@ -12,10 +12,10 @@ export default class Card extends React.Component {
             
             <div className='card'>
                 <div>
-                <img src='characters/Cheek-resized.png' />
+                    <img src={this.props.path}/>
                 </div>
-                <div className='card-front'>
-                <p>Back of Card</p>
+                    <div className='card-front'>
+                    <p>Back of Card</p>
                 </div>
             </div>
         
