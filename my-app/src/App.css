@@ -33,14 +33,14 @@
 body {
   background-color: antiquewhite;
 }
-.flex-container {
+.game {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 40px;
   gap: 30px;
 }
-.flex-item {
+.card {
   flex-basis: 250px;
   align-items: center;
   background-color: #DFBC93;
@@ -50,12 +50,26 @@ body {
   transform-style: preserve-3d;
   transition: transoform 0.5s;
 }
-.flex-item:hover {
+.card:hover {
   box-shadow: 0px 0px 30px #5E3722;
 }
-.flex-item:active {
+.card:active {
   transform: scale(0.95);
   transition: trnasform 0.2s;
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+}
+.card-front {
+  transform: rotateY(180deg);
+}
+.card-back {
+  background-color: #DFBC93;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
 }
 
 img {
