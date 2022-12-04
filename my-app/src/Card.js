@@ -20,11 +20,13 @@ export default class Card extends React.Component {
         return (
 
             <div className='card'>
-                <div className='card-front'>
-                    <img src={this.props.path} alt={this.props.path} />
-                </div>
-                <div className='card-back'>
-                    <p>Back of Card</p>
+                <div className='inner'>
+                    <div className='card-front'>
+                        <img src={this.props.path} alt={this.props.path} />
+                    </div>
+                    <div className='card-back'>
+                        <p>Back of Card</p>
+                    </div>
                 </div>
             </div>
 
