@@ -53,7 +53,7 @@ function App() {
               <Card path={paths[9]}/>
             </div> */}
         </div>   
-    </div>
+     </div>
   );
 }
 
