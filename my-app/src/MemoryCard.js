@@ -1,3 +1,5 @@
+// this is the class defined in demo code
+
 export default function MemoryCard({ data, handleClickCard }) {    
     return (
       <div

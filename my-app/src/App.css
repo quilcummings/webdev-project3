@@ -47,6 +47,7 @@ body {
   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   transform: scale(1);
+  /* this is what makes the card rotatable */
   transform-style: preserve-3d;
   transition: transoform 0.5s;
 }
@@ -57,20 +58,20 @@ body {
   transform: scale(0.95);
   transition: trnasform 0.2s;
 }
-
+/* hide the back side of the card
 .card-front, .card-back {
   backface-visibility: hidden;
-}
-.card-front {
+} */
+/* .card-front {
   transform: rotateY(180deg);
-}
-.card-back {
+} */
+/* .card-back {
   background-color: #DFBC93;
-}
-
-.card.flip {
+} */
+/* rotate the card if the card class is flip */
+/* .card.flip {
   transform: rotateY(180deg);
-}
+} */
 
 img {
   max-width: 100%;

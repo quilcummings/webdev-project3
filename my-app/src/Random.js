@@ -1,5 +1,7 @@
+// the random function in the demo code
+
 export function Randomize() {
-    const paths = ['characters/Cheek-resized.png', 'characters/Stormy-resized.png', 'characters/Pusheen-resized.png', 'characters/Sloth-resized.png', 'characters/Pip-resized.png'];
+    const paths = ['characters/Cheek-resized.png', 'characters/Stormy-resized.png', 'characters/Pusheen-resized.png', 'characters/Sloth-resized.png', 'characters/Pip-resized.png',];
 
     // create all cards with random images
     const cards = [];
