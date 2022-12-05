@@ -6,8 +6,22 @@ const paths = [{"src":"characters/Cheek-resized.png"}, {"src":"characters/Stormy
 
 function App() {
 
+ 
 
-  paths.sort(() => Math.random() - 0.5);
+  // function checkMatch() {
+  //   for(var i = 0; i < cards.length; i++)
+  //   {
+  //     for(var j = 0; j < cards.length; j++)
+  //     {
+  //       console.log(cards[i].props.flip);
+  //       if (i != j && cards[i] - cards[j] == 5)
+  //       {
+  //         alert("MATCH");
+  //       }
+  //     }
+  //   }
+  // }
+  
 
   // create all cards with random images
   const [cards, setCards] = useState([]);
@@ -33,6 +47,7 @@ function App() {
         <Card
           key={card.id}
           path={card.src}
+          back={"Pusheen-logo.png"}
         />
       ))}
             {/* <div className="flex-item">
@@ -70,6 +85,8 @@ function App() {
      </div>
   );
 }
+
+
 
 // function Randomize() {
 //   paths.sort(() => Math.random() - 0.5)
