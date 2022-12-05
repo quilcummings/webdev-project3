@@ -44,6 +44,7 @@ body {
 .card {
   flex-basis: 250px;
   align-items: center;
+  padding: 10px;
   background-color: #DFBC93;
   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -54,8 +55,8 @@ body {
   perspective: 1000px;
   transition: transform 0.5s;
 }
+
 .inner {
-  position: relative;
   width: 100%;
   height: 100%;
   text-align: center;

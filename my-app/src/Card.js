@@ -1,21 +1,6 @@
 import React from 'react';
-import App from './App';
-/** Changing class Card to function Card might be easier for us to follow the demo code
- * , but it's doing the same thing.
-export default function Card(props) {
+// import App from './App';
 
-
-    return (
-        <div className='card'>
-                <div className='card-front'>
-                    <img src={props.path} alt={props.path} />
-                </div>
-                <div className='card-back'>
-                    <p>Back of Card</p>
-                </div>
-            </div>
-    );
-}*/
 export default class Card extends React.Component {
 
     constructor(props) {
@@ -23,13 +8,12 @@ export default class Card extends React.Component {
         this.state = {
             flip: false,
         };
-
-        
         
     }
     
     // handleClick
-    handleClick = (index) => {
+    handleClick = () => {
+        this.props.handleChoice(this.props.card);
         // !this.props.flipped && this.props.onClick(index);
         // check previous state to see if the card is already flipped
         this.setState(prevState => ({
@@ -37,41 +21,35 @@ export default class Card extends React.Component {
         }));
 
         return this.state.flip;
-        // console.log(this.state.flip);
     }
 
-    componentDidUpdate() {
-        console.log(this.state.flip);
-    }
+    // componentDidUpdate(flip) {
+    //     console.log(this.state.flip);
+    // }
 
 
     render() {
+
         return (
             
-
             // first className: card
             // second className: I'm trying to pass the "flip" value in and have the className changed to flip-true and flip-false based on this.state.flip value
             <div 
-                className={`card flip-${this.state.flip}`}
+                className={`card ${this.props.flipped ? "flip-true" : "flip-false"}`}
                 onClick={()=> {
                     this.handleClick();
                 }}>
                 <div className='inner'>
                     <div className='card-front'>
                         <img
-                            src={this.props.path}
-                            alt={this.props.path}
+                            src={this.props.card.src}
+                            alt={this.props.card.src}
                              />
                     </div>
                     <div className='card-back'>
                         <img
-                            src={this.props.back}
-                             />
-                    </div>
-                    <p></p>
-                    <div className='card-back'>
-                        <img
-                            src={this.props.back}
+                            src={"Pusheen-logo.png"}
+                            alt="Click to flip the card!"
                              />
                     </div>
                 </div>
