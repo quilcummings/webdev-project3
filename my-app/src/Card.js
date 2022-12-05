@@ -40,13 +40,13 @@ export default class Card extends React.Component {
                     this.handleClick();
                 }}>
                 <div className='inner'>
-                    <div className='card-front'>
+                    <div className='card-back'>
                         <img
                             src={this.props.card.src}
                             alt={this.props.card.src}
                              />
                     </div>
-                    <div className='card-back'>
+                    <div className='card-front'>
                         <img
                             src={"Pusheen-logo.png"}
                             alt="Click to flip the card!"
