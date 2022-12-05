@@ -1,27 +1,40 @@
 import './App.css';
+import {useEffect, useState} from "react";
 import Card from './Card';
 
-let paths = [];
+const paths = [{"src":"characters/Cheek-resized.png"}, {"src":"characters/Stormy-resized.png"}, {"src":"characters/Pusheen-resized.png"}, {"src":"characters/Sloth-resized.png"}, {"src":"characters/Pip-resized.png"}];
 
 function App() {
 
-  paths = ['characters/Cheek-resized.png', 'characters/Stormy-resized.png', 'characters/Pusheen-resized.png', 'characters/Sloth-resized.png', 'characters/Pip-resized.png', 'characters/Cheek-resized.png', 'characters/Stormy-resized.png', 'characters/Pusheen-resized.png', 'characters/Sloth-resized.png', 'characters/Pip-resized.png'];
+
   paths.sort(() => Math.random() - 0.5);
 
   // create all cards with random images
-  const cards = [];
-  for (let i =0; i< paths.length; i++){
-    cards.push(
-    <Card path={paths[i]} key={i}/>
-    );
-  }
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState([]);
+  const [choiceTwo, setChoiceTwo] = useState([]);
 
+  const shuffleCards = () => {
+    const shuffledCards = [...paths, ...paths]
+      .sort(() => Math.random() - 0.5)
+      .map((card) => ({...card, id: Math.random()}))
 
+    setCards(shuffledCards);
+    setTurns(0);
+  };
+ 
+  console.log(cards, turns);
 
   return (
     <div className="App">  
     <div className="game">
-      {cards}
+      {cards.map(card => (
+        <Card
+          key={card.id}
+          path={card.src}
+        />
+      ))}
             {/* <div className="flex-item">
               <Card path={paths[0]}/>
             </div>
@@ -52,7 +65,8 @@ function App() {
             <div className="flex-item">
               <Card path={paths[9]}/>
             </div> */}
-        </div>   
+        </div> 
+        <button onClick={shuffleCards}>Restart</button>
      </div>
   );
 }
