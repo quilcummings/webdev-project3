@@ -2,6 +2,9 @@ import './App.css';
 import Card from './Card';
 
 let paths = [];
+export let cards;
+
+
 
 function App() {
 
@@ -9,53 +12,24 @@ function App() {
   paths.sort(() => Math.random() - 0.5);
 
   // create all cards with random images
-  const cards = [];
+  cards = [];
   for (let i =0; i< paths.length; i++){
     cards.push(
-    <Card path={paths[i]} key={i}/>
+    <Card path={paths[i]} key={i} back={"Pusheen-logo.png"}/>
     );
   }
 
-
-
   return (
+    
     <div className="App">  
     <div className="game">
       {cards}
-            {/* <div className="flex-item">
-              <Card path={paths[0]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[1]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[2]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[3]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[4]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[5]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[6]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[7]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[8]}/>
-            </div>
-            <div className="flex-item">
-              <Card path={paths[9]}/>
-            </div> */}
-        </div>   
-     </div>
+    </div>   
+    </div>
   );
 }
+
+
 
 // function Randomize() {
 //   paths.sort(() => Math.random() - 0.5)
