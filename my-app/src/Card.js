@@ -42,17 +42,19 @@ export default class Card extends React.Component {
             // first className: card
             // second className: I'm trying to pass the "flip" value in and have the className changed to flip-true and flip-false based on this.state.flip value
             <div className={`card flip-${this.state.flip}`}>
-                <div className='card-front'>
-                    <img
-                        src={this.props.path}
-                        alt={this.props.path}
-                        onClick={()=> {
-                         this.handleClick();
-                         }} />
-                </div>
-                <p></p>
-                <div className='card-back'>
-                    <p>Back of Card</p>
+                <div className='inner'>
+                    <div className='card-front'>
+                        <img
+                            src={this.props.path}
+                            alt={this.props.path}
+                            onClick={()=> {
+                                this.handleClick();
+                            }} />
+                    </div>
+                    <p></p>
+                    <div className='card-back'>
+                        <p>Back of Card</p>
+                    </div>
                 </div>
             </div>
 
