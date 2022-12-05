@@ -34,12 +34,15 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...paths, ...paths]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }))
 
+    setChoiceOne(null);
+    setChoiceTwo(null);  
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -52,6 +55,7 @@ function App() {
     setChoiceOne(null)
     setChoiceTwo(null)
     setTurns(prevTurns => prevTurns + 1)
+    setDisabled(false)
   }
   // fire shuffleCard function when the component initially mounts
   useEffect(() => {
@@ -61,8 +65,9 @@ function App() {
   // fire resetTurn function when the component mounts AND after the states of ChoiceOne and ChoiceTwo have been updated
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true)
       // if cards match and if they're not the same card
-      if (choiceOne.src === choiceTwo.src) {
+      if (choiceOne.src === choiceTwo.src && choiceOne.id !== choiceTwo.id) {
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
@@ -94,6 +99,7 @@ function App() {
             card={card}
             handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
           />
         ))}
       </div>
