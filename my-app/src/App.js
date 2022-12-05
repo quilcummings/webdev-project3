@@ -63,7 +63,6 @@ function App() {
     if (choiceOne && choiceTwo) {
       // if cards match and if they're not the same card
       if (choiceOne.src === choiceTwo.src) {
-        console.log("Matched!")
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
@@ -78,7 +77,7 @@ function App() {
       } else {
         console.log("No Match...");
         // wait a bit before turning them back
-        setTimeout(() => resetTurn(), 2000);
+        setTimeout(() => resetTurn(), 1500);
       }
     }
   }, [choiceOne, choiceTwo])
@@ -94,7 +93,7 @@ function App() {
             // We want to define image source as props 'card' instead of props 'path' in class Card so we can access it in handleClick and handleCard to see which card is clicked on.
             card={card}
             handleChoice={handleChoice}
-            flipped={card === choiceOne || choiceTwo || card.matched}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
           />
         ))}
       </div>

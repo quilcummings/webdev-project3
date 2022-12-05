@@ -16,11 +16,11 @@ export default class Card extends React.Component {
         this.props.handleChoice(this.props.card);
         // !this.props.flipped && this.props.onClick(index);
         // check previous state to see if the card is already flipped
-        this.setState(prevState => ({
-            flip: !prevState.flip,
-        }));
+        // this.setState(prevState => ({
+        //     flip: !prevState.flip,
+        // }));
 
-        return this.state.flip;
+        // return this.state.flip;
     }
 
     // componentDidUpdate(flip) {
