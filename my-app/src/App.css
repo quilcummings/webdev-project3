@@ -80,10 +80,17 @@ body {
   transition: transform 0.2s;
 }
 
-.card:active .inner {
+/* .card:active .inner {
+  transform: rotateY(180deg);
+} */
+
+.flip-true .inner {
   transform: rotateY(180deg);
 }
 
+.flip-false .inner {
+  transform: rotateY(360deg);
+}
 
 
 /* hide the back side of the card
