@@ -1,6 +1,5 @@
 import React from 'react';
-import {cards} from './App.js';
-
+import App from './App';
 /** Changing class Card to function Card might be easier for us to follow the demo code
  * , but it's doing the same thing.
 export default function Card(props) {
@@ -24,6 +23,9 @@ export default class Card extends React.Component {
         this.state = {
             flip: false,
         };
+
+        
+        
     }
     
     // handleClick
@@ -32,6 +34,8 @@ export default class Card extends React.Component {
         this.setState(prevState => ({
             flip: !prevState.flip,
         }));
+
+        return this.state.flip;
         // console.log(this.state.flip);
     }
 
@@ -39,23 +43,11 @@ export default class Card extends React.Component {
         console.log(this.state.flip);
     }
 
+
     render() {
-
-        for (let i = 0; i < cards.length; i++)
-        {
-            for (let j = 0; j < cards.length; j++)
-            {
-                //console.log(this.state);
-                
-
-                if (cards[i].state && cards[j].state)
-                {
-                    console.log("CHECK");
-                }
-            }
-        }
-
         return (
+            
+
             // first className: card
             // second className: I'm trying to pass the "flip" value in and have the className changed to flip-true and flip-false based on this.state.flip value
             <div className={`card flip-${this.state.flip}`}>

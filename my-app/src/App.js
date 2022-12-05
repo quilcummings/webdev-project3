@@ -2,11 +2,26 @@ import './App.css';
 import Card from './Card';
 
 let paths = [];
-export let cards;
-
-
+let cards;
 
 function App() {
+
+ 
+
+  function checkMatch() {
+    for(var i = 0; i < cards.length; i++)
+    {
+      for(var j = 0; j < cards.length; j++)
+      {
+        console.log(cards[i].props.flip);
+        if (i != j && cards[i] - cards[j] == 5)
+        {
+          alert("MATCH");
+        }
+      }
+    }
+  }
+  
 
   paths = ['characters/Cheek-resized.png', 'characters/Stormy-resized.png', 'characters/Pusheen-resized.png', 'characters/Sloth-resized.png', 'characters/Pip-resized.png', 'characters/Cheek-resized.png', 'characters/Stormy-resized.png', 'characters/Pusheen-resized.png', 'characters/Sloth-resized.png', 'characters/Pip-resized.png'];
   paths.sort(() => Math.random() - 0.5);
@@ -20,9 +35,8 @@ function App() {
   }
 
   return (
-    
     <div className="App">  
-    <div className="game">
+    <div className="game" onClick={checkMatch}>
       {cards}
     </div>   
     </div>
