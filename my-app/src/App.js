@@ -10,24 +10,9 @@ const paths = [
   { "src": "characters/Pip-resized.png", matched: false }
 ];
 
+var matches = 0;
+
 function App() {
-
-
-
-  // function checkMatch() {
-  //   for(var i = 0; i < cards.length; i++)
-  //   {
-  //     for(var j = 0; j < cards.length; j++)
-  //     {
-  //       console.log(cards[i].props.flip);
-  //       if (i != j && cards[i] - cards[j] == 5)
-  //       {
-  //         alert("MATCH");
-  //       }
-  //     }
-  //   }
-  // }
-
 
   // create all cards with random images
   const [cards, setCards] = useState([]);
@@ -35,6 +20,7 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  
 
   const shuffleCards = () => {
     const shuffledCards = [...paths, ...paths]
@@ -56,11 +42,21 @@ function App() {
     setChoiceTwo(null)
     setTurns(prevTurns => prevTurns + 1)
     setDisabled(false)
+    
   }
   // fire shuffleCard function when the component initially mounts
   useEffect(() => {
     shuffleCards();
   }, [])
+
+  const winCondition = () => {
+    alert("you win");
+    document.body.style.backgroundColor = "white";
+
+    const youWon = document.createElement("div");
+    const winner = document.createTextNode("You Won!");
+    youWon.appendChild(winner);
+  }
 
   // fire resetTurn function when the component mounts AND after the states of ChoiceOne and ChoiceTwo have been updated
   useEffect(() => {
@@ -68,6 +64,14 @@ function App() {
       setDisabled(true)
       // if cards match and if they're not the same card
       if (choiceOne.src === choiceTwo.src && choiceOne.id !== choiceTwo.id) {
+
+        matches++
+        if(matches%5===0)
+        {
+          setTimeout(() => winCondition(), 750);
+        }
+        //console.log(matches);
+
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
@@ -78,7 +82,9 @@ function App() {
           })
         })
         // reset choiceOne and choiceTwo to null
+        
         resetTurn()
+        
       } else {
         console.log("No Match...");
         // wait a bit before turning them back
@@ -89,7 +95,9 @@ function App() {
 
   console.log(cards);
 
+  
   return (
+   
     <div className="App">
       <div className="game">
         {cards.map(card => (
