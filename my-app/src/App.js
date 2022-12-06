@@ -31,6 +31,7 @@ function App() {
     setChoiceTwo(null);  
     setCards(shuffledCards);
     setTurns(0);
+    document.getElementById("win").innerHTML = "";
   };
 
   const handleChoice = (card) => {
@@ -50,12 +51,10 @@ function App() {
   }, [])
 
   const winCondition = () => {
-    alert("you win");
-    document.body.style.backgroundColor = "white";
+    //alert("you win");
 
-    const youWon = document.createElement("div");
-    const winner = document.createTextNode("You Won!");
-    youWon.appendChild(winner);
+    document.getElementById("win").innerHTML = "YOU WON";
+
   }
 
   // fire resetTurn function when the component mounts AND after the states of ChoiceOne and ChoiceTwo have been updated
@@ -68,7 +67,7 @@ function App() {
         matches++
         if(matches%5===0)
         {
-          setTimeout(() => winCondition(), 750);
+          setTimeout(() => winCondition(), 800);
         }
         //console.log(matches);
 
@@ -97,8 +96,12 @@ function App() {
 
   
   return (
-   
+    
+
     <div className="App">
+
+      <div id="win"></div>
+
       <div className="game">
         {cards.map(card => (
           <Card
