@@ -52,7 +52,7 @@ body {
   /* this is what makes the card rotatable */
 
 
-
+   
   /* transform-style: preserve-3d; */
 
 
@@ -83,14 +83,13 @@ body {
 
 .card:active {
   transform: scale(0.95);
-  transition: transform 0.2s;
+  transition: transform 0.8s;
 
-  /* will flip whole card but only while mouse is active
+  /* will flip whole card but only while mouse is active */
 
-  transform: rotateY(180deg); */
+  transform: rotateY(180deg); 
 
 }
-
 
 /* .card:active .inner {
   transform: rotateY(180deg);
