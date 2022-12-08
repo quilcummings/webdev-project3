@@ -10,13 +10,12 @@ const paths = [
   { "src": "characters/Pip-resized.png", matched: false }
 ];
 
-var matches = 0;
+let matches = 0;
 
 function App() {
 
   // create all cards with random images
   const [cards, setCards] = useState([]);
-  const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
@@ -30,7 +29,6 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);  
     setCards(shuffledCards);
-    setTurns(0);
     document.getElementById("win").innerHTML = "";
   };
 
@@ -41,7 +39,6 @@ function App() {
   const resetTurn = () => {
     setChoiceOne(null)
     setChoiceTwo(null)
-    setTurns(prevTurns => prevTurns + 1)
     setDisabled(false)
     
   }
@@ -50,12 +47,6 @@ function App() {
     shuffleCards();
   }, [])
 
-  const winCondition = () => {
-    //alert("you win");
-
-    document.getElementById("win").innerHTML = "YOU WON";
-
-  }
 
   // fire resetTurn function when the component mounts AND after the states of ChoiceOne and ChoiceTwo have been updated
   useEffect(() => {
@@ -83,6 +74,13 @@ function App() {
         // reset choiceOne and choiceTwo to null
         
         resetTurn()
+
+        const winCondition = () => {
+          alert("YOU WON!");
+      
+          document.getElementById("win").innerHTML = "YOU WON!";
+      
+        }
         
       } else {
         console.log("No Match...");
